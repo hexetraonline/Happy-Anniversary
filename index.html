@@ -22,35 +22,30 @@
 <div class="hero"></div>
 
 <!-- TIMELINE -->
-<section class="timeline fade-in">
+<section class="timeline">
   <h2>Wedding Day Story 💍</h2>
   <button onclick="startStory()">Start Story</button>
 </section>
 
-<!-- GLIMPSES -->
-<section class="glimpses fade-in">
-  <h2>21 Years of Togetherness ❤️</h2>
+<!-- 🎬 STORY VIEWER -->
+<div id="storyViewer" class="story">
+  <img id="storyImage">
+  <p id="storyCaption"></p>
 
-  <div class="grid">
-    <img src="images/glimpses/1.jpg">
-    <img src="images/glimpses/2.jpg">
-    <img src="images/glimpses/3.jpg">
-    <img src="images/glimpses/4.jpg">
-    <img src="images/glimpses/5.jpg">
-    <img src="images/glimpses/6.jpg">
-  </div>
-</section>
-
-<!-- 🎬 STORY MODAL -->
-<div id="storyModal" class="modal">
-  <div class="modal-content">
-    <h2>Wedding Story 💍</h2>
-    <p>Coming soon... ❤️</p>
-    <button onclick="closeModal()">Close</button>
+  <div class="controls">
+    <button onclick="prevStory()">⟨</button>
+    <button onclick="nextStory()">⟩</button>
+    <button onclick="closeStory()">✕</button>
   </div>
 </div>
 
-<!-- 🔝 SCROLL BUTTON -->
+<!-- GLIMPSES -->
+<section class="glimpses">
+  <h2>21 Years of Togetherness ❤️</h2>
+  <div class="grid" id="glimpsesGrid"></div>
+</section>
+
+<!-- 🔝 BUTTON -->
 <button id="topBtn"><span>↑</span></button>
 
 <script src="script.js"></script>
