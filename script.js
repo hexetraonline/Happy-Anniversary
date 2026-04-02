@@ -1,48 +1,44 @@
-// 🎬 CURTAIN + MUSIC + FADE
 window.addEventListener("load", () => {
   const curtain = document.getElementById("curtain");
   const music = document.getElementById("bgMusic");
 
+  // Safety: if something fails → show page
+  if (!curtain) return;
+
   setTimeout(() => {
     curtain.classList.add("open");
 
-    // Fade in content
-    document.body.classList.add("loaded");
+    // Try music (safe)
+    if (music) {
+      setTimeout(() => {
+        music.play().catch(() => {});
+      }, 600);
+    }
 
-    // Start music
+    // ALWAYS remove curtain (no freeze)
     setTimeout(() => {
-      music.play().catch(() => {
-        console.log("Tap required for audio");
-      });
-    }, 800);
+      curtain.remove();
+    }, 2000);
 
-    // Remove curtain
-    setTimeout(() => {
-      curtain.style.display = "none";
-    }, 2200);
-
-  }, 1200);
+  }, 800);
 });
 
 // 🔝 SCROLL BUTTON
 const topBtn = document.getElementById("topBtn");
 
-window.onscroll = () => {
+window.addEventListener("scroll", () => {
   if (window.scrollY > 200) {
     topBtn.style.display = "flex";
   } else {
     topBtn.style.display = "none";
   }
-};
+});
 
 topBtn.onclick = () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
+  window.scrollTo({ top: 0, behavior: "smooth" });
 };
 
-// ✨ FADE-IN ON SCROLL
+// ✨ FADE IN
 const elements = document.querySelectorAll(".fade-in");
 
 window.addEventListener("scroll", () => {
@@ -53,15 +49,15 @@ window.addEventListener("scroll", () => {
   });
 });
 
-// 🎵 FALLBACK MUSIC
+// 🎵 MUSIC FALLBACK (USER TAP)
 document.body.addEventListener("click", () => {
   const music = document.getElementById("bgMusic");
-  if (music.paused) {
+  if (music && music.paused) {
     music.play();
   }
 }, { once: true });
 
-// 🎬 STORY BUTTON
+// 🎬 BUTTON
 function startStory() {
-  alert("Timeline story coming soon ❤️");
+  alert("Story coming soon ❤️");
 }
