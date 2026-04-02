@@ -34,6 +34,11 @@ section {
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
+h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
 /* GRID */
 .grid {
   column-count: 2;
@@ -54,12 +59,14 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
+  display: flex;
   z-index: 9999;
+  overflow: hidden;
 }
 
-/* REAL CURTAIN LOOK */
-.curtain-top {
-  width: 100%;
+/* CURTAIN PANELS */
+.curtain {
+  width: 50%;
   height: 100%;
 
   background: repeating-linear-gradient(
@@ -70,14 +77,40 @@ section {
     #b30000 60px
   );
 
-  box-shadow: inset 0 -30px 60px rgba(0,0,0,0.6);
+  box-shadow: inset 0 0 50px rgba(0,0,0,0.6);
 
   transition: transform 1.8s ease-in-out;
 }
 
+/* LEFT */
+.curtain.left {
+  transform-origin: left;
+}
+
+/* RIGHT */
+.curtain.right {
+  transform-origin: right;
+}
+
 /* OPEN */
-#curtain.open .curtain-top {
-  transform: translateY(-100%);
+#curtain.open .left {
+  transform: translateX(-100%);
+}
+
+#curtain.open .right {
+  transform: translateX(100%);
+}
+
+/* CENTER LINE */
+#curtain::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 4px;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  transform: translateX(-50%);
 }
 
 /* 🔝 BUTTON */
@@ -108,6 +141,7 @@ section {
 #topBtn span {
   font-size: 24px;
   color: black;
+  line-height: 1;
 }
 
 /* FADE */
