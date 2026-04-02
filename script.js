@@ -6,14 +6,12 @@ window.addEventListener("load", () => {
   setTimeout(() => {
     if (curtain) curtain.classList.add("open");
 
-    // Play music safely
     if (music) {
       setTimeout(() => {
         music.play().catch(() => {});
       }, 600);
     }
 
-    // Remove curtain
     setTimeout(() => {
       if (curtain) curtain.remove();
     }, 2000);
@@ -33,10 +31,7 @@ window.addEventListener("scroll", () => {
 });
 
 topBtn.onclick = () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
+  window.scrollTo({ top: 0, behavior: "smooth" });
 };
 
 // ✨ FADE-IN
@@ -50,6 +45,15 @@ window.addEventListener("scroll", () => {
   });
 });
 
+// 🎬 MODAL
+function startStory() {
+  document.getElementById("storyModal").style.display = "flex";
+}
+
+function closeModal() {
+  document.getElementById("storyModal").style.display = "none";
+}
+
 // 🎵 MUSIC FALLBACK
 document.body.addEventListener("click", () => {
   const music = document.getElementById("bgMusic");
@@ -57,8 +61,3 @@ document.body.addEventListener("click", () => {
     music.play();
   }
 }, { once: true });
-
-// 🎬 STORY BUTTON
-function startStory() {
-  alert("Story coming soon ❤️");
-}
