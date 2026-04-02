@@ -8,7 +8,6 @@
 body {
   background: linear-gradient(to bottom, #fff5f5, #ffe4e1);
   text-align: center;
-  overflow-x: hidden;
 }
 
 /* HERO */
@@ -53,30 +52,7 @@ button {
   border-radius: 12px;
 }
 
-/* 🎬 CURTAIN */
-#curtain {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  z-index: 9999;
-}
-
-.curtain {
-  width: 50%;
-  background: linear-gradient(to right, #7a0000, #ff1a1a);
-  transition: transform 1.5s ease-in-out;
-}
-
-#curtain.open .left {
-  transform: translateX(-100%);
-}
-
-#curtain.open .right {
-  transform: translateX(100%);
-}
-
-/* 🎬 STORY VIEWER */
+/* STORY VIEWER */
 .story {
   position: fixed;
   top: 0;
@@ -101,11 +77,12 @@ button {
   margin-top: 15px;
 }
 
+/* CONTROLS */
 .controls button {
   margin: 8px;
 }
 
-/* 🔝 BUTTON */
+/* SCROLL BUTTON */
 #topBtn {
   position: fixed;
   bottom: 20px;
@@ -114,6 +91,4 @@ button {
   height: 60px;
   border-radius: 50%;
   display: none;
-  align-items: center;
-  justify-content: center;
 }
