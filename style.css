@@ -28,9 +28,7 @@ section {
   padding: 40px 15px;
 }
 
-.hero + section {
-  margin-top: -30px;
-}
+
 
 .timeline, .glimpses {
   background: white;
@@ -122,6 +120,8 @@ button:hover {
   display: none;
   align-items: center;
   justify-content: center;
+
+  z-index: 1000; /* important */
 }
 
 .modal-content {
