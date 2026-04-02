@@ -1,121 +1,81 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
+// =======================
+// 📸 GLIMPSES (14)
+// =======================
+const grid = document.getElementById("glimpsesGrid");
+
+for (let i = 1; i <= 14; i++) {
+  const img = document.createElement("img");
+  img.src = `images/glimpses/${i}.jpg`;
+  grid.appendChild(img);
 }
 
-body {
-  background: linear-gradient(to bottom, #fff5f5, #ffe4e1);
+
+// =======================
+// 🎬 STORY DATA (19)
+// =======================
+const storyData = [
+  { img: "images/timeline/1.jpg", text: "The beginning ❤️" },
+  { img: "images/timeline/2.jpg", text: "Wedding day 💍" },
+  { img: "images/timeline/3.jpg", text: "First memories 😊" },
+  { img: "images/timeline/4.jpg", text: "New journey ✨" },
+  { img: "images/timeline/5.jpg", text: "Building life 🏡" },
+  { img: "images/timeline/6.jpg", text: "Stronger together 💪" },
+  { img: "images/timeline/7.jpg", text: "Blessings 🙏" },
+  { img: "images/timeline/8.jpg", text: "Family grows 👨‍👩‍👧" },
+  { img: "images/timeline/9.jpg", text: "Happy moments 😄" },
+  { img: "images/timeline/10.jpg", text: "Joyful days 🌸" },
+  { img: "images/timeline/11.jpg", text: "Together always ❤️" },
+  { img: "images/timeline/12.jpg", text: "Strong bond 🔗" },
+  { img: "images/timeline/13.jpg", text: "Years of love 💖" },
+  { img: "images/timeline/14.jpg", text: "Beautiful memories 📸" },
+  { img: "images/timeline/15.jpg", text: "Growing together 🌱" },
+  { img: "images/timeline/16.jpg", text: "Happiness 😊" },
+  { img: "images/timeline/17.jpg", text: "Still in love 💕" },
+  { img: "images/timeline/18.jpg", text: "Forever ♾️" },
+  { img: "images/timeline/19.jpg", text: "21 Years ❤️" }
+];
+
+let index = 0;
+let interval;
+
+// START STORY
+function startStory() {
+  document.getElementById("storyViewer").style.display = "flex";
+  document.getElementById("bgMusic").play().catch(()=>{});
+  showStory();
+
+  interval = setInterval(nextStory, 3000); // auto slide
 }
 
-/* HERO */
-.hero {
-  height: 100vh;
-  background: url('images/cover.jpeg') center/contain no-repeat;
-  background-color: #111;
+// SHOW
+function showStory() {
+  document.getElementById("storyImage").src = storyData[index].img;
+  document.getElementById("storyCaption").innerText = storyData[index].text;
 }
 
-/* SECTION */
-section {
-  padding: 50px 15px;
-  text-align: center;
+// NEXT (tap or auto)
+function nextStory() {
+  index++;
+
+  if (index >= storyData.length) {
+    clearInterval(interval);
+    document.getElementById("storyViewer").style.display = "none";
+    document.getElementById("endPage").style.display = "flex";
+    return;
+  }
+
+  showStory();
 }
 
-.timeline, .glimpses {
-  background: white;
-  margin: 15px;
-  border-radius: 20px;
-  padding: 20px;
-}
+// =======================
+// 🔝 SCROLL BUTTON
+// =======================
+const btn = document.getElementById("topBtn");
 
-/* BUTTON */
-button {
-  padding: 12px 25px;
-  border-radius: 30px;
-  border: none;
-  background: linear-gradient(135deg, #ff4d6d, #ff758c);
-  color: white;
-  cursor: pointer;
-}
+window.onscroll = () => {
+  btn.style.display = window.scrollY > 200 ? "flex" : "none";
+};
 
-/* GRID FIXED */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-}
-
-.grid img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 12px;
-}
-
-/* STORY */
-.story {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: black;
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.story img {
-  max-width: 90%;
-  max-height: 70%;
-  border-radius: 12px;
-}
-
-.story p {
-  color: white;
-  margin-top: 15px;
-  font-size: 18px;
-}
-
-/* END PAGE */
-.end {
-  display: none;
-  position: fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background: linear-gradient(135deg, #ff758c, #ff7eb3);
-  color:white;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:20px;
-}
-
-/* PREMIUM FLOAT BUTTON */
-#topBtn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-
-  background: linear-gradient(145deg, #ffffff, #e6e6e6);
-  color: black;
-  font-size: 22px;
-
-  display: none;
-  justify-content: center;
-  align-items: center;
-
-  box-shadow:
-    0 8px 25px rgba(0,0,0,0.2),
-    inset 0 2px 5px rgba(255,255,255,0.8);
-
-  border: none;
-}
+btn.onclick = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
