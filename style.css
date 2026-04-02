@@ -13,7 +13,7 @@ body {
 .hero {
   height: 100vh;
   background: url('images/cover.jpeg') center/contain no-repeat;
-  background-color: #111;
+  
 }
 
 /* SECTION */
@@ -41,15 +41,13 @@ button {
 
 /* GRID FIXED */
 .grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
+  column-count: 2;
+  column-gap: 10px;
 }
 
 .grid img {
   width: 100%;
-  height: 220px;
-  object-fit: cover;
+  margin-bottom: 10px;
   border-radius: 12px;
 }
 
