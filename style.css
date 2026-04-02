@@ -14,7 +14,7 @@ body {
 /* HERO */
 .hero {
   height: 100vh;
-  background: url('images/cover.jpg') center/contain no-repeat;
+  background: url('images/cover.jpeg') center/contain no-repeat;
   background-color: #111;
 }
 
