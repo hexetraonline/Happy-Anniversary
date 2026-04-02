@@ -41,10 +41,14 @@ let interval;
 // START STORY
 function startStory() {
   document.getElementById("storyViewer").style.display = "flex";
-  document.getElementById("bgMusic").play().catch(()=>{});
+
+  const music = document.getElementById("bgMusic");
+  music.currentTime = 0;
+  music.play().catch(()=>{});
+
   showStory();
 
-  interval = setInterval(nextStory, 3000); // auto slide
+  interval = setInterval(nextStory, 3000);
 }
 
 // SHOW
@@ -53,12 +57,13 @@ function showStory() {
   document.getElementById("storyCaption").innerText = storyData[index].text;
 }
 
-// NEXT (tap or auto)
+// NEXT
 function nextStory() {
   index++;
 
   if (index >= storyData.length) {
     clearInterval(interval);
+
     document.getElementById("storyViewer").style.display = "none";
     document.getElementById("endPage").style.display = "flex";
     return;
@@ -67,8 +72,16 @@ function nextStory() {
   showStory();
 }
 
+// BACK TO HOME
+function goHome() {
+  document.getElementById("endPage").style.display = "none";
+  window.scrollTo({ top: 0, behavior: "smooth" });
+
+  index = 0;
+}
+
 // =======================
-// 🔝 SCROLL BUTTON
+// 🔝 TOP BUTTON
 // =======================
 const btn = document.getElementById("topBtn");
 
