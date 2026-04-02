@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Anniversary ❤️</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Anniversary ❤️</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
+<!-- MUSIC -->
+<audio id="bgMusic" src="audio/music.mp3"></audio>
 
 <!-- HERO -->
 <div class="hero"></div>
@@ -18,16 +21,21 @@
   <button onclick="startStory()">Start Story</button>
 </section>
 
-<!-- STORY VIEWER -->
-<div id="storyViewer" class="story">
+<!-- STORY -->
+<div id="storyViewer" class="story" onclick="nextStory()">
   <img id="storyImage">
   <p id="storyCaption"></p>
+</div>
 
-  <div class="controls">
-    <button onclick="prevStory()">⟨</button>
-    <button onclick="nextStory()">⟩</button>
-    <button onclick="closeStory()">✕</button>
-  </div>
+<!-- END PAGE -->
+<div id="endPage" class="end">
+  <h1>❤️ Happy Anniversary ❤️</h1>
+  <p>
+    Once again, Happy Anniversary <br><br>
+    Wishing you both a lifetime of love, happiness, and togetherness.  
+    Your journey is truly inspiring 💖 <br><br>
+    — From Nishu, Ithol & Monu
+  </p>
 </div>
 
 <!-- GLIMPSES -->
@@ -36,8 +44,8 @@
   <div class="grid" id="glimpsesGrid"></div>
 </section>
 
-<!-- SCROLL BUTTON -->
-<button id="topBtn"><span>↑</span></button>
+<!-- TOP BUTTON -->
+<button id="topBtn">↑</button>
 
 <script src="script.js"></script>
 </body>
