@@ -51,7 +51,8 @@ function startStory() {
 }
 
 function closeModal() {
-  document.getElementById("storyModal").style.display = "none";
+  const modal = document.getElementById("storyModal");
+  modal.style.display = "none";
 }
 
 // 🎵 MUSIC FALLBACK
