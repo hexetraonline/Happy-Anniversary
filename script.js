@@ -1,23 +1,21 @@
+// 🎬 CURTAIN + MUSIC
 window.addEventListener("load", () => {
   const curtain = document.getElementById("curtain");
   const music = document.getElementById("bgMusic");
 
-  // Safety: if something fails → show page
-  if (!curtain) return;
-
   setTimeout(() => {
-    curtain.classList.add("open");
+    if (curtain) curtain.classList.add("open");
 
-    // Try music (safe)
+    // Play music safely
     if (music) {
       setTimeout(() => {
         music.play().catch(() => {});
       }, 600);
     }
 
-    // ALWAYS remove curtain (no freeze)
+    // Remove curtain
     setTimeout(() => {
-      curtain.remove();
+      if (curtain) curtain.remove();
     }, 2000);
 
   }, 800);
@@ -35,10 +33,13 @@ window.addEventListener("scroll", () => {
 });
 
 topBtn.onclick = () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
 };
 
-// ✨ FADE IN
+// ✨ FADE-IN
 const elements = document.querySelectorAll(".fade-in");
 
 window.addEventListener("scroll", () => {
@@ -49,7 +50,7 @@ window.addEventListener("scroll", () => {
   });
 });
 
-// 🎵 MUSIC FALLBACK (USER TAP)
+// 🎵 MUSIC FALLBACK
 document.body.addEventListener("click", () => {
   const music = document.getElementById("bgMusic");
   if (music && music.paused) {
@@ -57,7 +58,7 @@ document.body.addEventListener("click", () => {
   }
 }, { once: true });
 
-// 🎬 BUTTON
+// 🎬 STORY BUTTON
 function startStory() {
   alert("Story coming soon ❤️");
 }
