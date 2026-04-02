@@ -1,69 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Anniversary ❤️</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Anniversary ❤️</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<!-- 🎬 CURTAIN -->
+<div id="curtain">
+  <div class="curtain left"></div>
+  <div class="curtain right"></div>
+</div>
+
+<!-- 🎵 MUSIC -->
+<audio id="bgMusic" src="audio/music.mp3" preload="auto"></audio>
+
 <!-- HERO -->
-<section class="hero"></section>
+<div class="hero"></div>
 
 <!-- TIMELINE -->
 <section class="timeline fade-in">
   <h2>Wedding Day Story 💍</h2>
-  <button onclick="startTimeline()">Start Story</button>
+  <button onclick="startStory()">Start Story</button>
 </section>
 
 <!-- GLIMPSES -->
 <section class="glimpses fade-in">
-  <h2>Glimpses From <br>21 Years of Togetherness ❤️</h2>
-  <div class="grid" id="glimpseGrid"></div>
+  <h2>21 Years of Togetherness ❤️</h2>
+  <div class="grid">
+
+    <!-- Replace with your images -->
+    <img src="images/glimpses/1.jpg">
+    <img src="images/glimpses/2.jpg">
+    <img src="images/glimpses/3.jpg">
+    <img src="images/glimpses/4.jpg">
+    <img src="images/glimpses/5.jpg">
+    <img src="images/glimpses/6.jpg">
+
+  </div>
 </section>
 
-<!-- SCROLL TO TOP BUTTON -->
-<button id="topBtn" onclick="scrollToTop()">
+<!-- 🔝 SCROLL TOP BUTTON -->
+<button id="topBtn">
   <span>↑</span>
 </button>
-
-<!-- STORY MODAL -->
-<div id="storyModal" class="modal">
-  <img id="storyImg">
-  <p id="storyText"></p>
-</div>
-
-<!-- IMAGE MODAL -->
-<div id="imageModal" class="modal" onclick="closeImage()">
-  <img id="previewImg">
-</div>
-
-<!-- END PAGE -->
-<div id="endPage" class="end-page">
-  <div class="end-content">
-    <h1>❤️ Once Again</h1>
-    <h2>Happy Anniversary</h2>
-
-    <p class="message">
-      Dear Uppa & Umma,<br><br>
-      Your journey together is a story of love, patience, and sacrifice.<br><br>
-      Through every moment, you stood together and built a beautiful life for us.<br><br>
-      Thank you for everything ❤️
-    </p>
-
-    <p class="from">
-      With love,<br>
-      <strong>Nishu, Ithol, Monu</strong>
-    </p>
-
-    <button onclick="location.reload()">Replay ❤️</button>
-  </div>
-</div>
-
-<!-- MUSIC -->
-<audio id="bgMusic" src="audio/music.mp3"></audio>
 
 <script src="script.js"></script>
 </body>
