@@ -84,12 +84,68 @@ button {
   left:0;
   width:100%;
   height:100%;
+
   background: linear-gradient(135deg, #ff758c, #ff7eb3);
-  color:white;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  padding: 20px;
+}
+
+/* CARD STYLE */
+.end-content {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(15px);
+
+  padding: 30px 25px;
+  border-radius: 20px;
+
+  max-width: 400px;
+  width: 100%;
+
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+  color: white;
+}
+
+/* TITLE */
+.end-content h1 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+/* MESSAGE */
+.end-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+/* SIGNATURE */
+.end-content .signature {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* BUTTON */
+.end-content button {
+  padding: 12px 25px;
+  border-radius: 30px;
+  border: none;
+
+  background: white;
+  color: #ff4d6d;
+
+  font-weight: bold;
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.end-content button:hover {
+  transform: scale(1.05);
 }
 
 /* TOP BUTTON */
