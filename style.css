@@ -9,11 +9,10 @@ body {
   background: linear-gradient(to bottom, #fff5f5, #ffe4e1);
 }
 
-/* HERO */
+/* HERO (NO BLACK SPACE) */
 .hero {
   height: 100vh;
-  background: url('images/cover.jpeg') center/contain no-repeat;
-  
+  background: url('images/cover.jpeg') center/cover no-repeat;
 }
 
 /* SECTION */
@@ -39,7 +38,7 @@ button {
   cursor: pointer;
 }
 
-/* GRID FIXED */
+/* GLIMPSES (NO CROPPING - PINTEREST STYLE) */
 .grid {
   column-count: 2;
   column-gap: 10px;
@@ -93,7 +92,7 @@ button {
   padding:20px;
 }
 
-/* PREMIUM FLOAT BUTTON */
+/* TOP BUTTON */
 #topBtn {
   position: fixed;
   bottom: 20px;
@@ -108,8 +107,8 @@ button {
   font-size: 22px;
 
   display: none;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
   box-shadow:
     0 8px 25px rgba(0,0,0,0.2),
