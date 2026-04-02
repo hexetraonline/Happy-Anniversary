@@ -14,8 +14,13 @@ body {
 /* HERO FIXED */
 .hero {
   height: 100vh;
-  background: url('images/cover.jpeg') center/cover no-repeat;
-  background-color: #111;
+
+  background: url('images/cover.jpeg') center no-repeat;
+  background-size: cover;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* SECTION */
