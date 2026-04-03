@@ -9,7 +9,7 @@ body {
   background: linear-gradient(to bottom, #fff5f5, #ffe4e1);
 }
 
-/* HERO (NO BLACK SPACE) */
+/* HERO */
 .hero {
   height: 100vh;
   background: url('images/cover.jpeg') center/cover no-repeat;
@@ -38,7 +38,7 @@ button {
   cursor: pointer;
 }
 
-/* GLIMPSES (NO CROPPING - PINTEREST STYLE) */
+/* GRID */
 .grid {
   column-count: 2;
   column-gap: 10px;
@@ -76,7 +76,7 @@ button {
   font-size: 18px;
 }
 
-/* END PAGE */
+/* END PAGE FIXED */
 .end {
   display: none;
   position: fixed;
@@ -87,7 +87,6 @@ button {
 
   background: linear-gradient(135deg, #ff758c, #ff7eb3);
 
-  display: flex;
   justify-content: center;
   align-items: center;
 
@@ -95,7 +94,7 @@ button {
   padding: 20px;
 }
 
-/* CARD STYLE */
+/* CARD */
 .end-content {
   background: rgba(255,255,255,0.15);
   backdrop-filter: blur(15px);
@@ -109,8 +108,7 @@ button {
   box-shadow: 0 10px 40px rgba(0,0,0,0.2);
   color: white;
 
-  /* ✨ ADD THIS */
- animation: fadeUp 1s ease forwards;
+  animation: fadeUp 1s ease forwards;
 }
 
 @keyframes fadeUp {
@@ -124,38 +122,26 @@ button {
   }
 }
 
-/* TITLE */
 .end-content h1 {
   font-size: 28px;
   margin-bottom: 15px;
 }
 
-/* MESSAGE */
 .end-content p {
   font-size: 16px;
   line-height: 1.6;
   margin-bottom: 25px;
 }
 
-/* SIGNATURE */
-.end-content .signature {
+.signature {
   font-weight: bold;
-  margin-top: 10px;
 }
 
 /* BUTTON */
 .end-content button {
-  padding: 12px 25px;
-  border-radius: 30px;
-  border: none;
-
   background: white;
   color: #ff4d6d;
-
   font-weight: bold;
-  cursor: pointer;
-
-  transition: 0.3s;
 }
 
 .end-content button:hover {
