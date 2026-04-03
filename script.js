@@ -1,6 +1,4 @@
-// =======================
-// 📸 GLIMPSES (14)
-// =======================
+// GLIMPSES
 const grid = document.getElementById("glimpsesGrid");
 
 for (let i = 1; i <= 14; i++) {
@@ -9,10 +7,7 @@ for (let i = 1; i <= 14; i++) {
   grid.appendChild(img);
 }
 
-
-// =======================
-// 🎬 STORY DATA (19)
-// =======================
+// STORY DATA
 const storyData = [
   { img: "images/timeline/1.jpg", text: "The beginning ❤️" },
   { img: "images/timeline/2.jpg", text: "Wedding day 💍" },
@@ -24,14 +19,14 @@ const storyData = [
   { img: "images/timeline/8.jpg", text: "Family grows 👨‍👩‍👧" },
   { img: "images/timeline/9.jpg", text: "Happy moments 😄" },
   { img: "images/timeline/10.jpg", text: "Joyful days 🌸" },
-  { img: "images/timeline/a.jpg", text: "Travelling from Groom house to Bride house" },
+  { img: "images/timeline/a.jpg", text: "Travel moment 🚗" },
   { img: "images/timeline/11.jpg", text: "Together always ❤️" },
   { img: "images/timeline/12.jpg", text: "Strong bond 🔗" },
   { img: "images/timeline/13.jpg", text: "Years of love 💖" },
   { img: "images/timeline/14.jpg", text: "Beautiful memories 📸" },
   { img: "images/timeline/15.jpg", text: "Growing together 🌱" },
   { img: "images/timeline/16.jpg", text: "Happiness 😊" },
-  { img: "images/timeline/b.jpg", text: "Travelling from bride house to groom house" },
+  { img: "images/timeline/b.jpg", text: "Another journey ✈️" },
   { img: "images/timeline/17.jpg", text: "Still in love 💕" },
   { img: "images/timeline/18.jpg", text: "Forever ♾️" },
   { img: "images/timeline/19.jpg", text: "21 Years ❤️" }
@@ -40,7 +35,6 @@ const storyData = [
 let index = 0;
 let interval;
 
-// START STORY
 function startStory() {
   document.getElementById("storyViewer").style.display = "flex";
 
@@ -49,17 +43,14 @@ function startStory() {
   music.play().catch(()=>{});
 
   showStory();
-
   interval = setInterval(nextStory, 3000);
 }
 
-// SHOW
 function showStory() {
   document.getElementById("storyImage").src = storyData[index].img;
   document.getElementById("storyCaption").innerText = storyData[index].text;
 }
 
-// NEXT
 function nextStory() {
   index++;
 
@@ -74,17 +65,13 @@ function nextStory() {
   showStory();
 }
 
-// BACK TO HOME
 function goHome() {
   document.getElementById("endPage").style.display = "none";
   window.scrollTo({ top: 0, behavior: "smooth" });
-
   index = 0;
 }
 
-// =======================
-// 🔝 TOP BUTTON
-// =======================
+// TOP BUTTON
 const btn = document.getElementById("topBtn");
 
 window.onscroll = () => {
